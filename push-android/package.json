@@ -1,0 +1,14 @@
+{
+  "name": "push-android",
+  "version": "1.0.0",
+  "description": "Push for Android",
+  "main": "push.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LiorRabin",
+  "license": "ISC",
+  "dependencies": {
+    "node-gcm": "^0.11.0"
+  }
+}
