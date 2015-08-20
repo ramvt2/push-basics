@@ -1,8 +1,6 @@
 var apn = require('apn');
-var isProd = false;
-var project = 'conecta/enterprise';
-//var project = 'boom/store';
-//var project = 'push_test';
+var isProd = true;
+var project = 'fablife/enterprise';
 var options = {
 	 'cert': './certs/'+ project + '/' + (isProd ? 'prod' : 'dev') + '/cert.pem',
 	 'key': './certs/'+ project + '/' + (isProd ? 'prod' : 'dev') + '/key.pem',
@@ -11,7 +9,7 @@ var options = {
 };
 var apnConnection = new apn.Connection(options);
 
-var token = '1a92d95c692dac5dbcc6c73752367fd0e0345c18c1e6388bff884439b390f35d';
+var token = 'a7fed2e95fdc11570cccbac4a46c29f4bd28ef93779ca7e49044628698727632';
 var myDevice = new apn.Device(token);
 
 var note = new apn.Notification();
