@@ -25,6 +25,7 @@ var message = new gcm.Message({
         subtitle: 'msg.text',
         msgId: 69,
         smallIcon: 'small_icon',
+        iconColor: '#09ff5d' || '',
         sound: 'default',
         pageId: 55
     }
