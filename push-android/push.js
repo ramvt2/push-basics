@@ -36,6 +36,6 @@ var regIds = ['cj01rDTono4:APA91bEtFVgYjkdFqiDy3c6elu4lnHzDCfnx7vD6ixq6Wl8pZ7q9Q
 var sender = new gcm.Sender(serverKey);
 
 sender.send(message, regIds, function (err, result) {
-    if(err) console.error(err);
-    else    console.log(result);
+    console.error('err', err);
+    console.log('result', result);
 });
