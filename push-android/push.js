@@ -2,6 +2,10 @@ var gcm = require('node-gcm');
 var serverKey = 'AIzaSyD3TF8eBjT5XtXUZNeJgFJDPc2IIlpTJ94';
 
 /*
+Fusion:
+ServerKey: AIzaSyD9X8UYJVWyAggeRAtwegqpEuknCpPOqMQ
+ClientID (APP): 896724701541
+
 FABLife: 
 ServerKey: AIzaSyD3TF8eBjT5XtXUZNeJgFJDPc2IIlpTJ94
 ClientID (APP): 690234740055
