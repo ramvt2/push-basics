@@ -23,19 +23,19 @@ var message = new gcm.Message({
     data: {
         title: 'msg.title',
         subtitle: 'msg.text',
-        msgId: 69,
+        msgId: 123456,
         smallIcon: 'small_icon',
         iconColor: '#09ff5d' || '',
         sound: 'default',
-        pageId: 55
+        pageId: 0
     }
 });
 
-var regIds = ['cj01rDTono4:APA91bEtFVgYjkdFqiDy3c6elu4lnHzDCfnx7vD6ixq6Wl8pZ7q9QJmC-_vWHqAnprnCGVuc6jvHBZ0xbXzHgy3zTtoUmm0wyR4ILdh34_jYWUm0M8hzvJ_1LQURhL9VSf1eEk6niLq1'];
+var regIds = ['e_1s19fa51Q:APA91bG_j8_b8Sa0dXbggkLkZb35aMRbXodmS6Q-vY89meOOKbk2kA5dnMi-4kprLP8kow_WWf59SzqyPWuGJT60FktU0AshPjQij2cozkMqlqN0ME1cAy6cSfijZo8K1O6d5e-a1EYa'];
 
 var sender = new gcm.Sender(serverKey);
 
-sender.send(message, regIds, function (err, result) {
-    console.error('err', err);
-    console.log('result', result);
+sender.sendNoRetry(message, regIds, function (e, data) {
+    console.log('err', JSON.stringify(err));
+    console.log('data', JSON.stringify(data));
 });

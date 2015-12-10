@@ -9,13 +9,21 @@ var feedbackOptions = {
 	'cert': './certs/'+ project + '/' + (isProd ? 'prod' : 'dev') + '/cert.pem',
 	'key': './certs/'+ project + '/' + (isProd ? 'prod' : 'dev') + '/key.pem',
 	'passphrase': 'push',
-	'production': false
+	'production': isProd
 };
 
 var feedback = new apn.Feedback(feedbackOptions);
-feedback.on("feedback", function(devices) {
-	console.log('devices', devices);
-	devices.forEach(function(item) {
-		console.log('item', item);
+
+feedback.on('error', function(d){
+	console.log('error', d);
+});
+feedback.on('feedbackError', function(d){
+	console.log('feedbackError', d);
+});
+feedback.on('feedback', function(feedbackItems) {
+	console.log('feedbackItems.length', feedbackItems.length);
+
+	feedbackItems.forEach(function(feedbackItem) {
+		console.log('Device: ' + feedbackItem.device.toString('hex') + ' has been unreachable, since: ' + feedbackItem.time);
 	});
 });

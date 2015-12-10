@@ -1,5 +1,5 @@
 var apn = require('apn');
-var isProd = true;
+var isProd = false;
 var project = 'conecta/enterprise';
 var options = {
 	 'cert': './certs/'+ project + '/' + (isProd ? 'prod' : 'dev') + '/cert.pem',
@@ -9,7 +9,7 @@ var options = {
 };
 var apnConnection = new apn.Connection(options);
 
-var token = '9df37608c0854888597685437c5f005c9484e784960780c35c2d061f78bfab92';
+var token = 'edd84dea166716a87d9980b5c79f16fc54cf5df35dfab25aa01c48c76239c54e';
 var myDevice = new apn.Device(token);
 
 var note = new apn.Notification();
@@ -22,7 +22,7 @@ note.alert = {
 	body: "You have a new message!!"
 };
 note.payload = {
-	msgId: 9,
+	msgId: 654321,
 	pageId: 0
 };
 note.contentAvailable = true;
