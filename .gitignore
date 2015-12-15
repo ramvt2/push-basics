@@ -2,3 +2,4 @@ __MACOSX/
 *.DS_Store
 push-android/node_modules/
 push-ios/node_modules/
+push-errors/node_modules/
