@@ -1,5 +1,5 @@
 var gcm = require('node-gcm');
-var serverKey = 'AIzaSyD3TF8eBjT5XtXUZNeJgFJDPc2IIlpTJ94';
+var serverKey = 'AIzaSyD9X8UYJVWyAggeRAtwegqpEuknCpPOqMQ';
 
 /*
 Fusion:
@@ -35,11 +35,14 @@ var message = new gcm.Message({
     }
 });
 
-var regIds = ['e_1s19fa51Q:APA91bG_j8_b8Sa0dXbggkLkZb35aMRbXodmS6Q-vY89meOOKbk2kA5dnMi-4kprLP8kow_WWf59SzqyPWuGJT60FktU0AshPjQij2cozkMqlqN0ME1cAy6cSfijZo8K1O6d5e-a1EYa'];
+var regIds = [
+    'dKyPWI3kFs8:APA91bHef9Sn4ERRQGIU7SnNaTfDH0Ym2mpQYsWvnFJkTvkAnd51w1DYuu3PAByDHbQqV3uxU-9zM9wlzWDhj5o0TjJPeWxRNGnTw2NWsbembx_nJ-xKmeaeOg4ukhrp6vcak7XcysIO',
+    'dBbsew1zgW8:APA91bEHwlL46LpTSrlycpLrN9yKRKMyMRuc7TvpXyr9bimskzEJqANgr8L02BkFE5GQ_S7K9sCKp3sntzyexNeGtezDY5AKwjxtP_hzYXjq0D70v-FCVRkKmknZ8yZJwq5_q5aCwur9'
+];
 
 var sender = new gcm.Sender(serverKey);
 
-sender.sendNoRetry(message, regIds, function (e, data) {
+sender.sendNoRetry(message, regIds, function (err, data) {
     console.log('err', JSON.stringify(err));
     console.log('data', JSON.stringify(data));
 });
